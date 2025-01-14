@@ -2,3 +2,4 @@
 wandb/
 .vscode
 __pycache__/
+**/test.ipynb
