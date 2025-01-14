@@ -1,0 +1,3 @@
+[submodule "deepali"]
+	path = deepali
+	url = https://github.com/starcksophie/deepali.git

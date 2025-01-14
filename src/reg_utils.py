@@ -3,6 +3,7 @@ from torch import Tensor
 import yaml
 import json
 import sys
+import os
 import torch
 from tqdm import tqdm
 
@@ -13,10 +14,10 @@ from deepali.losses import functional as L
 from deepali.data import FlowField, Image
 from deepali.core import Axes, Grid
 
-sys.path.append('/vol/aimspace/users/staso/repositories/test/deepali')
-from examples.ffd.pairwise import register_pairwise
-
 from data_utils import load_and_preprocess, save_sitk
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from deepali.examples.ffd.pairwise import register_pairwise
 
 def load_config(config_path):
     r"""Load registration parameters from configuration file."""
