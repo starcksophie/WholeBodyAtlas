@@ -16,11 +16,10 @@ from metrics import dice, NMILOSS, calculate_jacobian_metrics
 def set_seed(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
     np.random.seed(seed)
     random.seed(seed)
-    torch.backends.cudnn.deterministic = True  # ensures reproducibility
-    torch.backends.cudnn.benchmark = False  # disables the inbuilt cudnn auto-tuner
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 def update_config(config, args):
     config['energy']['seg'] = [1, args.loss]
