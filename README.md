@@ -21,11 +21,15 @@ The code uses magnetic resonance imaging (MRI) data from the UK Biobank dataset.
 
 ## Citation
 ```
-  @article{starck2023constructing,
-  title={Constructing Population-Specific Atlases from Whole Body MRI: Application to the UKBB},
+  @article{starck2024using,
+  title={Using UK Biobank data to establish population-specific atlases from whole body MRI},
   author={Starck, Sophie and Sideri-Lampretsa, Vasiliki and Ritter, Jessica JM and Zimmer, Veronika A and Braren, Rickmer and Mueller, Tamara T and Rueckert, Daniel},
-  journal={arXiv preprint arXiv:2308.14365},
-  year={2023}
+  journal={Communications Medicine},
+  volume={4},
+  number={1},
+  pages={237},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
 }
 ```
 
