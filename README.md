@@ -26,7 +26,7 @@ Ensure you have the following installed with `Python 3.11.3` using the `requirem
 wandb sweep sweep.yaml
 wandb sweep --entity <your_workspace_name> sweep_config.yaml
 ```
-## Running the atlas creation
+### Running the atlas creation
 First update `cfg/deformable_config.yaml`, then register the dataset  and create the atlas:
 ```
 python register_dataset.py --path_data <path_to_dataset --path_labels <path_to_labels>
