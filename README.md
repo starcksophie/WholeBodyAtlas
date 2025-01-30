@@ -15,6 +15,7 @@ The code uses magnetic resonance imaging (MRI) data from the UK Biobank dataset.
 - Python 3.11.3
 - Install required packages using the `requirements.txt` file:
   ```bash
+  pip install -e deepali
   pip install -r requirements.txt
   ```
 
