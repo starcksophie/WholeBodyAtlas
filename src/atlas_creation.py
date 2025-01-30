@@ -7,8 +7,10 @@ from pathlib import Path
 from typing import List
 import deepali.spatial as spatial
 from deepali.data import Image
-
-from reg_utils import load_transform
+import sys
+# from reg_utils import load_transform
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from deepali.examples.ffd.pairwise import register_pairwise, load_transform
 from data_utils import load_and_preprocess, save_sitk
 
 if __name__ == '__main__':
@@ -20,7 +22,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     base_dir = Path(args.path)
-    save_dir = Path(args.path)
+    save_dir = Path(args.path_out)
    
     eids = sorted(os.listdir(base_dir))
     
@@ -35,17 +37,12 @@ if __name__ == '__main__':
     
     i = 0
     for subject_dir in tqdm(base_dir.iterdir()):
-        try:
-            image = Image.read(subject_dir.joinpath('D_wat.nii.gz'))
-            
-            transform = load_transform(subject_dir.joinpath('D_trf.mha'), target_grid)
+        image = Image.read(subject_dir.joinpath('D_wat.nii.gz'))
+        transform = load_transform(subject_dir.joinpath('D_trf.nii.gz'), target_grid)
 
-            naive_atlas += image
-            avg_transform += transform.data()
-            i+=1
-        except:
-            print(f'Error with {subject_dir}')
-            continue
+        naive_atlas += image
+        avg_transform += transform.data()
+        i+=1
         
     naive_atlas /=i
     avg_transform/=i

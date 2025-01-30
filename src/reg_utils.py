@@ -61,7 +61,7 @@ def register_deformable(target_path, source_path, config, device, source_seg, ta
         warped_seg = warped_seg.detach().cpu().squeeze()
     if save:
         save_path, sitk_arr = save
-        transform[0].flow()[0].write(save_path.joinpath('D_trf.mha'))
+        transform[0].flow()[0].write(save_path.joinpath('D_trf.nii.gz'))
         save_sitk(save_path.joinpath('D_wat.nii.gz'), warped, sitk_arr)
         save_sitk(save_path.joinpath('D_label.nii.gz'), warped_seg, sitk_arr)
     return warped_deformable, warped_seg, transform
