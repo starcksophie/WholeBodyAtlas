@@ -10,14 +10,28 @@ Reliable reference data in medical imaging is largely unavailable. Our work addr
 
 The code uses magnetic resonance imaging (MRI) data from the UK Biobank dataset. Due to data sharing agreements, the original UK Biobank data cannot be redistributed. However, the generated atlases can be downloaded [here](https://doi.org/10.5281/zenodo.13136891).
 
-## Requirements
+## 🚀 Usage
 
-- Python 3.11.3
-- Install required packages using the `requirements.txt` file:
+Follow the steps below to set up and run the project.
+
+### Requirements
+Ensure you have the following installed with `Python 3.11.3` using the `requirements.txt` file:  
+
   ```bash
   pip install -e deepali
   pip install -r requirements.txt
   ```
+### Running the registration parameter search
+```
+wandb sweep sweep.yaml
+wandb sweep --entity <your_workspace_name> sweep_config.yaml
+```
+## Running the atlas creation
+First update `cfg/deformable_config.yaml`, then register the dataset  and create the atlas:
+```
+python register_dataset.py --path_data <path_to_dataset --path_labels <path_to_labels>
+python atlas_creation.py --path <path_to_registered_dataset --path_out <path_to_save>
+```
 
 ## Citation
 ```

@@ -1,0 +1,7 @@
+matplotlib==3.8.4
+numpy==1.24.3
+PyYAML==6.0.2
+SimpleITK==2.4.1
+torch==2.0.1
+torchmetrics==1.4.0.post0
+tqdm==4.66.2
